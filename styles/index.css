@@ -1,0 +1,90 @@
+.page {
+  background: linear-gradient(#1e1e28, 50%, #251d2c);
+  font-family: 'Red Hat Text', sans-serif;
+  margin: 0;
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-image: url('../images/bg-stars.svg');
+  background-repeat: repeat;
+  background-size: cover;
+  padding-bottom: 200px;
+}
+
+.title {
+  margin: 140px auto 0;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .5rem;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.timer {
+  width: 690px;
+  display: flex;
+  justify-content: space-between;
+  margin: 80px auto 0;
+}
+
+.timer__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.timer__cell {
+  position: relative;
+  width: 148px;
+  height: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#2c2c44 50%, #34364f 50%);
+  border-radius: 6px;
+  box-shadow: 0px 10px 0px #1a1a22;
+  overflow: hidden;
+}
+
+.timer__number {
+  font-size: 68px;
+  line-height: 68px;
+  background: -webkit-linear-gradient(#d54f72 50%, #ff5d82 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timer__unit {
+  color: #8182a0;
+  margin: 30px auto 0;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+}
+
+.timer__point {
+  position: absolute;
+  top: calc(50% - 6px);
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #1a1a22;
+}
+
+.timer__point-right {
+  left: 142px;
+}
+
+.footer {
+  max-width: 1440px;
+  height: 197px;
+  margin: 0 auto;
+  background-image: url('../images/pattern-hills.svg');
+  background-repeat: no-repeat;
+}
