@@ -24,4 +24,4 @@ const countdown = () => {
   seconds.textContent = textSecond < 10 ? '0' + textSecond : textSecond;
 }
 
-setInterval(countdown, 1000);
+// setInterval(countdown, 1000);
