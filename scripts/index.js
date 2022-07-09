@@ -1,11 +1,10 @@
-const days = document.querySelector('.timer__number-days');
-const hours = document.querySelector('.timer__number-hours');
-const minutes = document.querySelector('.timer__number-minutes');
-const seconds = document.querySelector('.timer__number-seconds');
+let countDate = new Date('September 13, 2022 00:00:00').getTime();
 
-const countdown = () => {
-  const countDate = new Date('September 13, 2022 00:00:00').getTime();
-  const nowDate = new Date().getTime();
+setInterval(flipAllCards, 250)
+
+function flipAllCards() {
+
+  const nowDate = new Date();
   const gap = countDate - nowDate;
 
   const s = 1000;
@@ -13,15 +12,46 @@ const countdown = () => {
   const h = m * 60;
   const d = h * 24;
 
-  const textDay = Math.floor(gap / d);
-  const textHour = Math.floor((gap % d) /h);
-  const textMinute = Math.floor((gap % h) /m);
-  const textSecond = Math.floor((gap % m) /s);
+  const days = Math.floor(gap / d)
+  const hours = Math.floor((gap % d) /h)
+  const minutes = Math.floor((gap % h) /m)
+  const seconds = Math.floor((gap % m) /s)
 
-  days.textContent = textDay < 10 ? '0' + textDay : textDay;
-  hours.textContent = textHour < 10 ? '0' + textHour : textHour;
-  minutes.textContent = textMinute < 10 ? '0' + textMinute : textMinute;
-  seconds.textContent = textSecond < 10 ? '0' + textSecond : textSecond;
+  flip(document.querySelector("[data-days-tens]"), Math.floor(days / 10))
+  flip(document.querySelector("[data-days-ones]"), days % 10)
+  flip(document.querySelector("[data-hours-tens]"), Math.floor(hours / 10))
+  flip(document.querySelector("[data-hours-ones]"), hours % 10)
+  flip(document.querySelector("[data-minutes-tens]"), Math.floor(minutes / 10))
+  flip(document.querySelector("[data-minutes-ones]"), minutes % 10)
+  flip(document.querySelector("[data-seconds-tens]"), Math.floor(seconds / 10))
+  flip(document.querySelector("[data-seconds-ones]"), seconds % 10)
 }
 
-// setInterval(countdown, 1000);
+function flip(flipCard, newNumber) {
+  const topHalf = flipCard.querySelector(".flip-card__top")
+  const startNumber = parseInt(topHalf.textContent)
+  if (newNumber === startNumber) return
+
+  const bottomHalf = flipCard.querySelector(".flip-card__bottom")
+  const topFlip = document.createElement("div")
+  topFlip.classList.add("top-flip")
+  const bottomFlip = document.createElement("div")
+  bottomFlip.classList.add("bottom-flip")
+
+  top.textContent = startNumber
+  bottomHalf.textContent = startNumber
+  topFlip.textContent = startNumber
+  bottomFlip.textContent = newNumber
+
+  topFlip.addEventListener("animationstart", e => {
+    topHalf.textContent = newNumber
+  })
+  topFlip.addEventListener("animationend", e => {
+    topFlip.remove()
+  })
+  bottomFlip.addEventListener("animationend", e => {
+    bottomHalf.textContent = newNumber
+    bottomFlip.remove()
+  })
+  flipCard.append(topFlip, bottomFlip)
+}
