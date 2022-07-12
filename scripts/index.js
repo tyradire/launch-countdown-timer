@@ -9,6 +9,9 @@ const textTopDays = containerDays.querySelector('.flipcard__number_top');
 const textTopHours = containerHours.querySelector('.flipcard__number_top');
 const textTopMinutes = containerMinutes.querySelector('.flipcard__number_top');
 const textTopSeconds = containerSeconds.querySelector('.flipcard__number_top');
+
+const textCenterSeconds = containerSeconds.querySelector('.flipcard__number_center');
+
 const textBottomDays = containerDays.querySelector('.flipcard__number_bottom');
 const textBottomHours = containerHours.querySelector('.flipcard__number_bottom');
 const textBottomMinutes = containerMinutes.querySelector('.flipcard__number_bottom');
@@ -41,9 +44,12 @@ function flip(flipCardTop, flipCardBottom, newNumber) {
   if (newNumber > 9) {
     flipCardTop.textContent = newNumber;
     flipCardBottom.textContent = newNumber;
+    textCenterSeconds.textContent = newNumber;
+
   } else {
     flipCardTop.textContent = '0' + newNumber;
     flipCardBottom.textContent = '0' + newNumber;
+    textCenterSeconds.textContent = '0' + newNumber;
   }
   
   // const topHalf = flipCard.querySelector(".flip-card__top")
