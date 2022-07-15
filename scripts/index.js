@@ -9,15 +9,15 @@ const flipMinutes = document.getElementById('minutes');
 const flipHours = document.getElementById('hours');
 const flipDays = document.getElementById('days');
 
-const textTopDays = containerDays.querySelector('.flipcard__number_top');
-const textTopHours = containerHours.querySelector('.flipcard__number_top');
-const textTopMinutes = containerMinutes.querySelector('.flipcard__number_top');
-const textTopSeconds = containerSeconds.querySelector('.flipcard__number_top');
+const textTopDays = containerDays.querySelector('.flip-card__number_top');
+const textTopHours = containerHours.querySelector('.flip-card__number_top');
+const textTopMinutes = containerMinutes.querySelector('.flip-card__number_top');
+const textTopSeconds = containerSeconds.querySelector('.flip-card__number_top');
 
-const textBottomDays = containerDays.querySelector('.flipcard__number_bottom');
-const textBottomHours = containerHours.querySelector('.flipcard__number_bottom');
-const textBottomMinutes = containerMinutes.querySelector('.flipcard__number_bottom');
-const textBottomSeconds = containerSeconds.querySelector('.flipcard__number_bottom');
+const textBottomDays = containerDays.querySelector('.flip-card__number_bottom');
+const textBottomHours = containerHours.querySelector('.flip-card__number_bottom');
+const textBottomMinutes = containerMinutes.querySelector('.flip-card__number_bottom');
+const textBottomSeconds = containerSeconds.querySelector('.flip-card__number_bottom');
 
 setInterval(flipAllCards, 1000)
 

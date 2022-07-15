@@ -106,7 +106,7 @@
   z-index: 1;
 }
 
-.flipcard__number {
+.flip-card__number {
   width: 148px;
   display: flex;
   justify-content: center;
@@ -115,7 +115,7 @@
   overflow: hidden;
 }
 
-.flipcard__number_flip {
+.flip-card__number_flip {
   position: absolute;
   top: 0;
   left: 0;
@@ -143,14 +143,14 @@
   display: block;
 }
 
-.flipcard__number_top {
+.flip-card__number_top {
   color: #d64e72;
   align-items: flex-end;
   z-index: 5;
   opacity: 1;
 }
 
-.flipcard__number_bottom {
+.flip-card__number_bottom {
   color: #fc5d83;
   z-index: 5;
   opacity: 1;
@@ -164,24 +164,40 @@
   to {
     top: -1px;
     opacity: 1;
-    background: linear-gradient(#2c2c44 40%, #34364f 60%);
+
   }
 }
 
 @keyframes numOpacity {
   0% {
-    opacity: 1;
+    filter: blur(0px);
   }
   25% {
-    opacity: 0;
+    filter: blur(.5px) grayscale(20%);
   }
   50% {
-    opacity: 1;
+    filter: blur(1px) grayscale(40%);
   }
   75% {
-    opacity: .5;
+    filter: blur(.5px) grayscale(20%);
   }
   100% {
-    opacity: 1;
+    filter: blur(0px);
   }
+}
+
+.icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  margin: 250px auto 0;
+  cursor: pointer;
+}
+
+.icon svg path {
+  transition: .5s;
+}
+
+.icon svg:hover path {
+  fill: #f36186;
 }
