@@ -1,4 +1,4 @@
-let countDate = new Date('October 20, 2023 00:00:00').getTime();
+let countDate = new Date('October 20, 2022 00:00:00').getTime();
 
 const containerDays = document.querySelector("[data-days]");
 const containerHours = document.querySelector("[data-hours]");
